@@ -1,0 +1,39 @@
+
+title
+composer
+date of composition
+place of composition
+performers, pairs of role/name
+
+roles:
+conductor
+orchestra
+bass
+soprano
+tenor
+flute
+
+
+names of movements
+
+filename(s) of movements
+
+
+label
+label number
+disk numbers (multiples)
+date of recording
+place of recording
+studio where recorded
+
+ripper
+scrubber
+
+liner notes
+ripper notes
+scrubber notes
+
+user comments
+
+source
+source description

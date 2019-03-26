@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>Dad's 78s</title>
+		<script src="svc/getTracks.php"></script>
+		<style>
+			p.composer {
+				font-weight:bold;
+				margin:7px 0 0 0;
+			}
+			div.track {
+				margin:0;
+			}
+		</style>
+		<script>
+			onload = function() {
+				var max = g.length;
+				var s = '';
+				var p = '';
+				for (var i=0; i<max; i++) {
+					if (p != g[i].name) {
+						s += formatComposer(g[i]);
+						p = g[i].name;
+					}
+					s += formatTrack(g[i]);
+				}
+				$('list').innerHTML = s;
+			}
+			$ = function(x) {
+				return document.getElementById(x);
+			}
+			formatComposer = function(o) {
+				return '<p class="composer">' + o.name + '</p>';
+			}
+			formatTrack = function(o) {
+				var s = '<div class="track">'+
+					'<a href="http://www.archive.org/details/' + o.sourceid + '" target="_new">' + o.title + '</a> ['+o.id+']'+
+					'</div>';
+				return s;
+			}
+			formatTrackOld = function(o) {
+				var s = '<div class="track">'+
+					'<div>' + o.title + '</div>'+
+					'<div><a href="http://www.archive.org/details/' + o.sourceid + '" target="_new">link</a></div>'+
+					'<div>' + o.description + '</div>'+
+					'</div>';
+				return s;
+			}
+		</script>
+	</head>
+	<body>
+		<div id="list">
+		</div>
+	</body>
+</html>
