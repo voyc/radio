@@ -1,7 +1,4 @@
 <?php
-// (c) Copyright 2011 voyc.com
-//----------------------------------------------------------
-
 /**
  * A web service to read tracks.
  *
@@ -12,20 +9,11 @@
 /**
  *
  */
-require_once(dirname(__FILE__).'/../../phplib/config.php');
+require_once(dirname(__FILE__).'/../../../config.php');
 require_once(dirname(__FILE__).'/../../phplib/jlog.php');
 openjlog(basename(__FILE__));
 jlog(JLOG_DEBUG,"getTracks");
-
-// Grant access to specified domains
-if(isset($_SERVER['HTTP_ORIGIN']) && ($_SERVER['HTTP_ORIGIN'] == "http://www.voyc.com" || $_SERVER['HTTP_ORIGIN'] == "http://www.huxleysparrot.com")) {
-    header('Access-Control-Allow-Origin: http://www.huxleysparrot.com');
-    header('Content-type: application/xml');
-}
-//else {
-//	return;
-//}
-jlog(JLOG_DEBUG,"1");
+header("Content-type:application/javascript");
 
 // quarantine inputs
 $hostile = &$_GET;
@@ -40,6 +28,11 @@ $conn = @pg_connect("port=$dbport dbname=$dbname user=$dbuser password=$dbpasswo
 if (!$conn) {
 	jlog(JLOG_DEBUG,"unable to connect");
     writeError();
+	echo "$dbport\n";
+	echo "$dbuser\n";
+	echo "$dbname\n";
+	echo "$dbpassword\n";
+	echo "connect error\n";
 	return;
 }
 
@@ -157,7 +150,8 @@ else if ($format == 'json') {
 		}
 	}
 	
-	echo "];onData(g);";
+	//echo "];onData(g);";
+	echo "];";
 }
 
 return;
@@ -201,7 +195,4 @@ function writeError() {
 	echo $dom->saveXML();
 	return;
 }
-
-//----------------------------------------------------------
-// (c) Copyright 2011 voyc.com
 ?>
