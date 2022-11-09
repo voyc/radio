@@ -1,0 +1,44 @@
+todo
+  . integrate slideshow, search engine
+  . create data-entry form to add, revise, delete db records (see below)
+  . write integrity check program to read all url's
+  . add "now playing" composer, artist, title, year, source-url
+  . add "now showing" artist, title, year, source-url
+  . add all street art from IG
+  . write svc getRandom()
+  . in player, set preload=auto, swap two audio objects
+  . write anti-piracy statement
+
+old database to new media.csv
+failed: 124
+pagesuccess: 221
+mediasuccess: 220
+
+data entry form
+  audio: composer, artist, title, time, place, description, source-url, media-url
+  visual:          artist, title, time, place, description, source-url, media-url
+  integrity check urls
+  write to db
+
+add to user table:
+  musicset: blob, array of ids
+  artset: ditto
+  blocked_tracks: blob, array of ids
+  blocked_art: ditto
+
+archive.org urls and filenames are not consistent, so don't try to use their id
+  page:  https://archive.org/details/BeethovenPianoSonataNo.1
+  track: https://ia800700.us.archive.org/17/items/BeethovenPianoSonataNo.1/BeethovenSonata1_64kb.mp3
+
+media cache idea - abondoned, too complex for multi-users
+
+new svc: getRandom('track/art')
+  read playlist
+  if not found, create playlist as an array of trackids, shuffled
+  pop the next track id off the playlist
+  read db info for the track
+  return as json to the caller
+
+new svc: update('track/art/lit', sourceurl, mediaurl, title, composer, performer)
+  insert or update, delete?
+  need Account management
