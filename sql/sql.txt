@@ -1,0 +1,91 @@
+archive.org
+page:  https://archive.org/details/BeethovenPianoSonataNo.1
+
+
+$sql = 'select trk.id, trk.sourceid, trk.composerkey, co.name, co.timebegin, co.timeend, co.place, trk.title, trk.description'.
+		' from music.track trk, music.composer co'.
+		' where trk.composerkey is not null'.
+		' and trk.composerkey=co.key'.
+		' and trk.genre=\'classical\''.
+		' and trk.title <> \'?\'';
+if ($sort == 'date') {
+	$sql .= ' order by co.timebegin, co.timeend, trk.composerkey, trk.genre, trk.title';
+}
+else {
+	$sql .= ' order by trk.composerkey, trk.genre, trk.title';
+}
+
+
+
+db: dads78s
+
+schema: music
+
+table: track
+	id
+	sourceid    - key into the archive.com page
+	composerkey
+	title
+	description
+	genre
+
+table: composer
+	key
+	name
+	timebegin
+	timeend
+	place
+
+python
+
+<?php
+// database parameters
+$dbname = "voyccom_dads78s";
+$dbhost = "localhost";
+$dbuser = "voyccom_jhagstrand";
+$dbpassword = "cognize9";
+$dbport = "5432";
+~ 
+psql voyccom_dads78s localhost voyccom_jhagstrand cognize9 5432
+
+
+title
+composer
+date of composition
+place of composition
+performers, pairs of role/name
+
+roles:
+conductor
+orchestra
+bass
+soprano
+tenor
+flute
+
+
+names of movements
+
+filename(s) of movements
+
+
+label
+label number
+disk numbers (multiples)
+date of recording
+place of recording
+studio where recorded
+
+ripper
+scrubber
+
+liner notes
+ripper notes
+scrubber notes
+
+user comments
+
+source
+source description
+~                                                                                                        
+~                           

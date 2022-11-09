@@ -1,0 +1,100 @@
+todo
+  . x bug: player keeps playing Tuxedo Junction over and over
+  . decide on title: "radio" or not (see below)
+  . create new subdomain: radio
+  . anomaly: radio subdomain will use dads78s database
+  . copy into subdomain radio
+      . dads78s
+      . slideshow
+      . new player code
+  . rename repository: dads78s to radio
+  . create new homepage player, slideshow, search engine
+  . create data-entry form to add, revise, delete db records (see below)
+  . write integrity check program to read all url's
+  . add "now playing" composer, artist, title, year, source-url
+  . add "now showing" artist, title, year, source-url
+  . add all street art from IG
+  . write svc getRandom()
+  . in player, set preload=auto, swap two audio objects
+  . write anti-piracy statement
+
+newmedia.csv
+failed: 124
+pagesuccess: 221
+mediasuccess: 220
+
+
+title should indicate "public domain", "open", "fuck pirates", or something 
+  radio.voyc.com
+  audio visual
+  free art, open art, out-of-copyright
+  open source music and art 
+  public domain music and art
+  out-of-copyright music and art
+  artistry.voyc.com
+  artistree.voyc.com
+  radiofree.voyc.com
+  anti-piracy statement
+
+data entry form
+  audio: composer, artist, title, time, place, description, source-url, media-url
+  visual:          artist, title, time, place, description, source-url, media-url
+  integrity check urls
+  write to db
+
+add to user table:
+  musicset: blob, array of ids
+  artset: ditto
+  blocked_tracks: blob, array of ids
+  blocked_art: ditto
+
+archive.org urls and filenames are not consistent, so don't try to use their id
+  page:  https://archive.org/details/BeethovenPianoSonataNo.1
+  track: https://ia800700.us.archive.org/17/items/BeethovenPianoSonataNo.1/BeethovenSonata1_64kb.mp3
+
+notes on media cache idea
+  nice idea, but becomes problematic with multi-users
+    so for now, use only urls and read media files from the cloud
+    the following notes are for historical purposes only
+  PHP to download mp3 to host:
+    https://www.codercrunch.com/question/1946512051/how-to-programmatically-download-mp3-file-from-web-using-php
+  keep database table of song urls
+  keep temp folder with 10 downloaded songs
+      choose url at random
+      download it
+      if download fails, mark the db as no longer available
+  play the songs in order
+      async javascript must ask for the next filename and pass it to the player
+  after playing a song
+      delete it
+      then call the downloader to replace it to keep temp folder full
+  multi user options
+    1. each user has his own temp folder
+         can skip and block and personalize
+         this is a lot of temp folders
+    2. each user gets the currently playing song
+         true broadcast
+         cannot skip or block or personalize
+         file is not deleted until all users have finished playing it (how do you know?)
+    3. complete music library on the host computer, copied from cloud sources
+
+offline upgrade of current database of archive.org tracks
+  read all tracks
+  for each
+      get_file_contents
+      grep * /download/ * 64kb * mp3
+      grep * /download/ * mp3
+      write media_filename into db
+      write source_page into db
+      distinguish between composer and artist
+
+new svc: getRandom('track/art')
+  read playlist
+  if not found, create playlist as an array of trackids, shuffled
+  pop the next track id off the playlist
+  read db info for the track
+  return as json to the caller
+
+new svc: update('track/art/lit', sourceurl, mediaurl, title, composer, performer)
+  insert or update, delete?
+  need Account management

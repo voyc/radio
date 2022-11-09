@@ -1,0 +1,14 @@
+For now, we are adding new data into the csv file.
+Eventually we will move it to the database.
+
+filelist:
+
+composer.csv - dumped from dads78s database
+track.csv    - dumped from dads78s database
+sql.txt      - notes on reading dads78s database
+
+fixup.py     - one-time, convert track.csv to media.csv
+
+media.csv    - master list for manual edit
+csv2js.py    - convert media.csv to html/js/media.js
+
