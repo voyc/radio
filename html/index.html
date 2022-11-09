@@ -42,9 +42,9 @@ body {
 	<audio id='myplayer' controls autoplay></audio>
 	<div>
 		<div id='musiccard'></div>
-		<button id='mprev'>Prev</button>
-		<button id='mskip'>Skip</button>
-		<button id='mblock'>Block</button>
+		<button id='mprev' title='Back'>&#9664;</button>
+		<button id='mskip' title='Skip'>&#9654;</button>
+		<button id='mblock' title='Block'>&#128683;</button>
 	</div>
 </div>
 <figure id="slideshow">
@@ -52,9 +52,15 @@ body {
 </figure>
 <div id='overlay'>
 	<div id='artcard'></div>
-	<button id='aprev'>Prev</button>
-	<button id='askip'>Skip</button>
-	<button id='ablock'>Block</button>
+	<button id='aprev' title='Back'>&#9664;</button>
+	<button id='askip' title='Skip'>&#9654;</button>
+	<button id='ablock' title='Block'>&#128683;</button>
+<!--
+left arrow = U+25C0 = &#9664;
+right arrow = U+25B6 = &#9654;
+no entry = U+1F6AB = &#128683;
+
+-->
 </div>
 </body>
 </html>
