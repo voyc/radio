@@ -1,50 +1,56 @@
-window.onload = function() {
-	gaudio = document.getElementById('myplayer');
-	gaudio.onended = nextSong;
-	gaudio.onerror = nextSong;
-	nextSong();
-	gaudio.style.display = 'none';
-	document.getElementById('nextbtn').style.display = 'none';
+// radio.js - drive the player and slideshow 
 
-	document.getElementById('playbtn').onclick = function(e) {
-		gaudio.play();
-		gaudio.style.display = 'block';
-		e.srcElement.style.display = 'none';
-		document.getElementById('nextbtn').style.display = 'block';
-	}
+window.addEventListener('load', function(e) {
+	startart();
+	startmusic();
+}, false);
 
-	document.getElementById('nextbtn').onclick = function(e) {
-		nextSong();
+getRandom = function(block) {
+	rset = block.set
+	if (rset.length <= 0) {
+		var m = block.data.length
+		for (var i=0; i<m; i++) {
+			rset.push(i)
+		}
+		rset.sort(() => Math.random() - 0.5); // shuffle
 	}
+	i = rset.pop()
+	return i
 }
 
-gset = []
-
-buildSet = function() {
-	function shuffle(array) {
-		array.sort(() => Math.random() - 0.5);
-	}
-
-	var m = data.length
-	for (var i=0; i<m; i++) {
-		gset.push(i)
-	}
-	shuffle(gset)
-	console.log(gset)
+startmusic = function() {
+	nextSong();
+	document.getElementById('myplayer').onended = nextSong;
+	document.getElementById('myplayer').onerror = nextSong;
+	document.getElementById('skipbtn').onclick = nextSong;
+	document.getElementById('blockbtn').onclick = nextSong;
 }
 
 nextSong = function() {
-	gsett = localStorage.getItem('gset')
-	console.log(['gset', gsett])
+	i = getRandom(music)
+	song = music.data[i]['mediaurl']
+	document.getElementById('myplayer').src = song
+	document.getElementById('mcomposer').innerHTML = music.names[music.data[i].composer];
+	document.getElementById('mperformer').innerHTML= music.data[i].performer;
+	document.getElementById('myear').innerHTML     = music.data[i].year;
+	document.getElementById('mtitle').innerHTML    = music.data[i].title;
+}
 
-	if (gset.length <= 0) {
-		buildSet()
-	}
-	i = gset.pop()
-	song = data[i]['mediaurl']
-	console.log('next ' + i +' of ' + gset.length)
-	gaudio.src = song
+var seconds = 10
+var timer = null;
 
-	localStorage.setItem('gsett','hi')
+startart = function() {
+	nextPic();
+	if (timer) clearInterval(timer); 
+	timer = setInterval(nextPic, (seconds * 1000));
+	document.getElementById('slide').onerror = nextPic;
+}
+
+nextPic = function() {
+	i = getRandom(art)
+	document.getElementById('slide').src = art.data[i].url;
+	document.getElementById('artist').innerHTML =   art.names[art.data[i].artist];
+	document.getElementById('year').innerHTML =     art.data[i].year;
+	document.getElementById('title').innerHTML =    art.data[i].title;
 }
 
