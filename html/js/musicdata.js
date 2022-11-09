@@ -1,5 +1,6 @@
 music = {
 set: [],
+hist: [],
 names: {
 	BARBER             :"Barber, Samuel                             ",
 	BARTOK             :"Bartók, Béla                               ",
@@ -2192,17 +2193,6 @@ data: [
         "performer": "",
         "pageurl": "https://archive.org/details/La_donna_e_mobile",
         "mediaurl": "https://archive.org/download/La_donna_e_mobile/Caruso_La_donna_e_mobile_64kb.mp3"
-    },
-    {
-        "id": "9200",
-        "composer": "VERDIGIUSEPPE",
-        "title": "Luisa Tetrazzini Caro nome 88295",
-        "year": "",
-	"genre": "classical",
-        "form": "30",
-        "performer": "",
-        "pageurl": "https://archive.org/details/LuisaTetrazziniCaroNome88295",
-        "mediaurl": "https://archive.org/download/LuisaTetrazziniCaroNome88295/tetrazzini_caro_nome_64kb.mp3"
     },
     {
         "id": "5977",

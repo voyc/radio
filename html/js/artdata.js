@@ -1,5 +1,6 @@
 art = {
 set: [],
+hist: [],
 names: {
 	kandinsky:'Wassily Kandinsky',
 	okeefe:"Georgia O'keefe",
@@ -44,17 +45,14 @@ data: [
 	{artist:'okeefe', year:'1926', period:'', title:'Yellow Calla', url:'https://rememberingletters.files.wordpress.com/2011/11/usa-z-yellow-calla-okeefe.jpg'},
 	{artist:'okeefe', year:'1924', period:'', title:'Red Canna', url:'https://i.pinimg.com/originals/4b/27/ab/4b27ab059181bb40fd4f1715a443b029.jpg'},
 	{artist:'okeefe', year:'1925', period:'', title:'Flower of Life', url:'https://paintingandframe.com/art-imgs/georgia_o_keeffe/flower_of_life-16320.jpg'},
-	{artist:'okeefe', year:'1919', period:'', title:'Series I White and Blue Flower Shapes', url:'https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/series-i-white-and-blue-flower-shapes-1919-georgia-okeeffe.jpg'},
 	{artist:'okeefe', year:'1918', period:'', title:'Blue Flower', url:'https://i.pinimg.com/originals/40/a7/ac/40a7ac68f94bcc97fd98cc7674e46a9e.jpg'},
 	{artist:'okeefe', year:'1918', period:'', title:'Music Pink and Blue', url:'https://cdn11.bigcommerce.com/s-feud0ek893/images/stencil/2048x2048/products/3044/3322/music-pink-and-blue-ii_painter-georgia-o-keeffe__26762__08585__21103.1566784175.jpg?c=1'},
 	{artist:'okeefe', year:'1918', period:'', title:'Series 1 Number 4', url:'https://i.cbc.ca/1.2269938.1383019020!/httpImage/image.jpg_gen/derivatives/original_780/okeefe-series1-no4.jpg'},
-	{artist:'okeefe', year:'1928', period:'', title:'Red Poppy No. VI', url:'http://www.angelfire.com/art/favoritewomenartists/okeefe1.jpg'},
-	{artist:'okeefe', year:'1930', period:'', title:'Jack-in-the-Pulpit IV', url:'http://www.angelfire.com/art/favoritewomenartists/georgi1.gif'},
+	{artist:'okeefe', year:'1928', period:'', title:'Red Poppy No. VI', url:'https://www.angelfire.com/art/favoritewomenartists/okeefe1.jpg'},
+	{artist:'okeefe', year:'1930', period:'', title:'Jack-in-the-Pulpit IV', url:'https://www.angelfire.com/art/favoritewomenartists/georgi1.gif'},
 	{artist:'okeefe', year:'1928', period:'', title:'Lilies with Red Anemone', url:'https://images-na.ssl-images-amazon.com/images/I/61qNgAWigvL._AC_SY879_.jpg'},
-	{artist:'okeefe', year:'1926', period:'', title:'Pink Tulip', url:'https://images.curiator.com/image/upload/f_auto,q_auto/t_x/art/upzrbuwtqfhhhr2rtj8j.jpg'},
 	{artist:'okeefe', year:'1934', period:'', title:'Jimson Weed', url:'https://cdn11.bigcommerce.com/s-feud0ek893/images/stencil/2048x2048/products/11916/25324/jimson-weed-1934_georgia-o-keeffe__66072.1582998494.jpg?c=1'},
 	{artist:'okeefe', year:'1919', period:'', title:'Red Canna', url:'https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/red-canna-georgia-o-keeffe.jpg'},
 	{artist:'okeefe', year:'1923', period:'', title:'Single Canna Lily', url:'https://ak1.ostkcdn.com/images/products/12417262/Georgia-OKeeffe-Single-Calla-Lily-Red-1923-Hand-Painted-Framed-Canvas-Art-4ff9641f-682b-4d39-809e-635c459b76d1.jpg'},
-	{artist:'okeefe', year:'1959', period:'', title:'From the River-Pale', url:'://i.guim.co.uk/img/media/b66e08c77cd2701e6d18b779e1f0832b759e54e5/0_0_1925_2577/master/1925.jpg?width=700&quality=85&auto=format&fit=max&s=1444a048a30ddab0207970f4c425d8a3'},
 ]}
 

@@ -1,9 +1,12 @@
 todo
-  . integrate slideshow, search engine
+  . add graphic buttons for back skip block settings
+  . fixup composer names
+  . find missing titles and years and composers
+  . add street art
+  . ingegrate browse
+  . integrate search engine
   . create data-entry form to add, revise, delete db records (see below)
   . write integrity check program to read all url's
-  . add "now playing" composer, artist, title, year, source-url
-  . add "now showing" artist, title, year, source-url
   . add all street art from IG
   . write svc getRandom()
   . in player, set preload=auto, swap two audio objects
